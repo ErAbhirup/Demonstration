@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/hi', function () {
+     return 'Hello World';
+});
+
+
+Route::get('role',[
+   'middleware' => 'Role:editor',
+   'uses' => 'TestController@index',
+]);
